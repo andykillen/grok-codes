@@ -1,0 +1,78 @@
+{
+	"name": "andykillen/wordpress-deployment",
+	"description": "Deploy Wordpress via composer with extra tools to make it easier.",
+	"type" : "project",
+	"homepage" : "https://github.com/andykillen/wordpress-deployment",
+	"license" : "GPL-3.0-or-later",
+	"authors" : [
+		{
+			"name" : "Andrew Killen",
+			"email" : "andrew@bas-works.com",
+			"homepage" : "https://grok.codes",
+			"role" : "Developer"
+		}
+	],
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"keywords": [
+		"wordpress",
+		"cms",
+		"composer",
+		"deployment",
+		"htaccess",
+		"robots.txt"
+	],
+	"require": {
+		"cweagans/composer-patches": "^1.7",
+		"composer/composer": "^2.1.8",
+		"composer/installers": "^2.0",
+		"johnpbloch/wordpress": "^5.8.1",
+		"wpackagist-plugin/akismet":"^4.2.1",
+		"wpackagist-theme/twentytwenty":"^1.8"
+	},
+	"extra": {
+		"composer-exit-on-patch-failure": true,
+		"patches-file": "composer.patches.json",
+		"enable-patching": true,
+		"installer-paths": {
+			"public_html/wp-content/plugins/{$name}/": [
+				"type:wordpress-plugin"
+			],
+			"public_html/wp-content/themes/{$name}/": [
+				"type:wordpress-theme"
+			]
+		},
+		"wordpress-install-dir": "public_html",
+		"wordpress-type" : "single",
+		"server-type" : "apache"
+	},
+	"repositories": {
+		"wpackagist":  {
+			"type": "composer",
+			"url": "https://wpackagist.org",
+			"only": [
+					"wpackagist-plugin/*",
+					"wpackagist-theme/*"
+				]
+			}
+	},
+	"autoload": {
+        "classmap": [
+            "scripts/Composer/WordPress.php"
+        ]
+	},
+	"scripts": {
+        "post-package-install": [
+            "Deployments\\Composer\\WordPress::postPackageInstall"
+        ],
+        "post-package-update": [
+            "Deployments\\Composer\\WordPress::postPackageUpdate"
+        ],
+		"post-create-project-cmd" : [
+			"@postInstall"
+		],
+		"postInstall" : [
+			"npm install; npm run setup"
+		]
+    }
+}
