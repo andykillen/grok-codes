@@ -1,0 +1,128 @@
+@mixin svgFill($color) {
+    svg {
+        fill: $color;
+        :global(path) {
+            fill: $color;
+        }
+    }
+}
+/* Default Fonts, with mobile compatibilty */
+$body_font_family : "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI",  "Droid Sans", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", sans-serif; /* Use system font for mobile */
+/* Heading fonts, with mobile compatibilty */
+$heading_font_family : "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI",  "Droid Sans", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", sans-serif;
+/* Code area fonts, with mobile compatibilty */
+$code_font_family : 'Fira Mono', menlo, inconsolata, 'Courier New', monospace;
+
+
+$color : #3E3C3C;
+
+$link_color : #84C218;
+$link_hover_color : $color; 
+$heading_link_color: #000;
+$heading_hover_color: $link_color;
+
+$red : #f00;
+$white : #fff;
+$darkgrey: #A9A9A9;
+$light_grey: #d8d8d8;
+$green : #84C218;
+$blue: #007a78;// #51BFc9;
+$purple:#A1086A;
+$black : #202020;
+
+$background_color: #E5E5E5;
+
+
+
+$popup_background: #fff;
+
+
+
+
+$max_width: 1170px;
+$max_container_with_padding : 1210px;
+
+/** breakpoints **/
+
+$tablet : 660px;
+$desktop : 900px;
+
+/** header **/
+$header_background: #FFF;
+
+/** footer **/
+$footer_background: #FFF;
+
+/** fonts **/
+$h1_font_size : 2rem; // 36
+$h2_font_size : 1.75rem; // 28
+$h3_font_size : 1.375rem; // 22
+$h4_font_size : 1.125rem; // 18
+$h5_font_size : 1.125rem; // 18
+$button_font_size: 1.125rem; // 18
+$p_font_size :  1.125rem; // 18
+
+
+
+$border_radius : 7px;
+
+$close_button_hover : $color;
+$close_button_hover_text : #fff;
+
+$main_menu_color : $color;
+$main_menu_hover_color : $link_color;
+$main_menu_selected_color : $color;
+$main_menu_underline_color : $color;
+
+
+/** shadow **/
+
+$shadow :0px 0px 10px 3px #D8D8D8;
+
+
+
+/** listing **/
+
+$open_close_background : $color;
+$open_close_color : #fff;
+$listing_link_color : $color;
+$list_article_border_color : #D8D8D8;
+
+/** article **/
+
+$article_background_color:#fff;
+$article_border_color: #D8D8D8;
+
+/** filters **/
+$filter_border_color: #201b1b;
+$button_color: #3E3C3C;
+$filter_background: #F5F5F5;
+$filter_header_background: #fff;
+$checkbox_outer : #3E3C3C;
+$filter_open_close_color: #3E3C3C;
+
+// root{
+//     --bg-color:#fff;
+//     --text-color:#333;
+//     --heading-color:#222;
+//     --primary:#43DFE0;
+//     --grey:#5B6A7B;
+//     --light:#91A9C4;
+//     --dark:#39424D;
+//     --blue:#2363AD;
+//     --peach:#E4957E;
+//     --red:#AD2E23;
+//     --white:#fbfeff
+// }
+    
+// --font-mono: 'Fira Mono', monospace;
+// --pure-white: #ffffff;
+// --primary-color: #b9c6d2;
+// --secondary-color: #d0dde9;
+// --tertiary-color: #edf0f8;
+// --accent-color: #ff3e00;
+// --heading-color: rgba(0, 0, 0, 0.7);
+// --text-color: #444444;
+// --background-without-opacity: rgba(255, 255, 255, 0.7);
+// --column-width: 42rem;
+// --column-margin-top: 4rem;

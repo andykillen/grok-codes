@@ -4,10 +4,23 @@
 		<meta charset="utf-8" />
 		<link rel="icon" href="/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-
+		<link rel="preconnect" href="https://static.grok.codes" >
+		<link rel="preconnect" href="https://www.youtube.com" >
+		<link rel="preconnect" href="https://www.googletagmanager.com" >
 		%svelte.head%
 	</head>
 	<body>
-		<div id="svelte">%svelte.body%</div>
+		<div id='page'>
+			<div id="svelte">%svelte.body%</div>
+		</div>
+		<script type="application/ld+json">
+			{
+			  "@context": "https://schema.org",
+			  "@type": "Organization",
+			  "name": "Grok Codes" 
+			  "url": "https://grok.codes/",
+			  "logo": "https://static.grok.codes/logo.png"
+			}
+		</script>
 	</body>
 </html>
